@@ -20,7 +20,7 @@ export default function HeroSectionCustom() {
       <div className="relative w-full h-[50vh] md:h-[90vh] flex items-center justify-center">
 
         <Image
-          src="/images/hero-6.jpg"
+          src="/images/hero-7.jpg"
           alt="Restaurant background"
           fill
           className="object-cover"
@@ -32,7 +32,7 @@ export default function HeroSectionCustom() {
 
         {/* LOGO inside container with padding */}
         <div className="absolute bottom-[13rem] md:bottom-auto md:top-40 w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex justify-center md:justify-start z-20">
+          <div className="mb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex justify-start z-20">
             <div
               className="overflow-hidden w-24 h-24 md:w-28 md:h-28 rounded-full bg-white flex items-center justify-center shadow-lg"
               data-aos="fade-right"
