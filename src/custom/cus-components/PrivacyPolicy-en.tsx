@@ -17,8 +17,8 @@ export default function PrivacyPolicy_en() {
 
       <p className="mb-4">
         At <strong>Pizza Italia</strong> (
-        <a href="https://www.masala-gf.de" className="text-blue-600 underline">
-          www.masala-gf.de
+        <a href="https://www.pizza-italia.it10x.com" className="text-blue-600 underline">
+          www.pizza-italia.it10x.com
         </a>
         ), we take your privacy seriously. This page explains how we collect, use, and protect your personal data.
       </p>
@@ -65,8 +65,8 @@ export default function PrivacyPolicy_en() {
       </p>
       <p className="mb-4">
         📧{' '}
-        <a href="mailto:info@masala-gf.de" className="text-blue-600 underline">
-          info@masala-gf.de
+        <a href="mailto:info@pizza-italia.it10x.com" className="text-blue-600 underline">
+          info@pizza-italia.it10x.com
         </a>
       </p>
 
@@ -75,8 +75,8 @@ export default function PrivacyPolicy_en() {
         If you have any questions regarding this privacy policy, feel free to reach out to us:
         <br />
         📧{' '}
-        <a href="mailto:info@masala-gf.de" className="text-blue-600 underline">
-          info@masala-gf.de
+        <a href="mailto:info@pizza-italia.it10x.com" className="text-blue-600 underline">
+          info@pizza-italia.it10x.com
         </a>
       </p>
 

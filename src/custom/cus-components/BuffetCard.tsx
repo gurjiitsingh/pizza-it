@@ -61,7 +61,7 @@ export default function BuffetCard() {
               <p>Braunschweigerstr. 93, 38518 Gifhorn</p>
 
               <p>05371 62 66 291</p>
-              <p>masala-gf.de</p>
+              <p>pizza-italia.it10x.com</p>
             </div>
 
             <button

@@ -52,8 +52,8 @@ export default function UnsubscribePage() {
           <p className="text-gray-600 mb-4">We’re sad to see you go. 😢</p>
           <p className="text-sm text-gray-500">
             If this was a mistake, contact us at{' '}
-            <a href="mailto:info@masala-gf.de" className="underline">
-              info@masala-gf.de
+            <a href="mailto:info@pizza-italia.it10x.com" className="underline">
+              info@pizza-italia.it10x.com
             </a>.
           </p>
         </div>

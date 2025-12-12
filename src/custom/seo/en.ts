@@ -1,7 +1,7 @@
 export const SEO = {
   title: "Pizz Italia – Bhogpur to Bholath Road, Bhatnura Lubana, Punjab 144201",
   description:
-    "Authentic food at Grill Hut , Bhogpur to Bholath Road, Bhatnura Lubana, Punjab 144201. Order online for delivery ",
+    "Authentic food at Pizza Italia , Bhogpur to Bholath Road, Bhatnura Lubana, Punjab 144201. Order online for delivery ",
 };
 
 

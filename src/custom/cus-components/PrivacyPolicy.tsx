@@ -18,10 +18,10 @@ export default function PrivacyPolicy_en() {
         <p className="mb-4">
           At <strong>Pizz Italia</strong> (
           <a
-            href="https://www.masala-gf.de"
+            href="https://www.pizza-italia.it10x.com"
             className="text-blue-600 underline"
           >
-            www.grillhutjunction.com
+            www.pizza-italia.it10x.com
           </a>
           ), we take your privacy seriously. This page explains how we collect,
           use, and protect your personal data.
@@ -84,10 +84,10 @@ export default function PrivacyPolicy_en() {
         <p className="mb-4">
           
           {/* <a
-            href="mailto:info@masala-gf.de"
+            href="mailto:info@pizza-italia.it10x.com"
             className="text-blue-600 underline"
           >
-            info@masala-gf.de
+            info@pizza-italia.it10x.com
           </a> */}
         </p>
 
@@ -98,10 +98,10 @@ export default function PrivacyPolicy_en() {
           <br />
           📧{" "}
           {/* <a
-            href="mailto:info@masala-gf.de"
+            href="mailto:info@pizza-italia.it10x.com"
             className="text-blue-600 underline"
           >
-            info@masala-gf.de
+            info@pizza-italia.it10x.com
           </a> */}
         </p>
 

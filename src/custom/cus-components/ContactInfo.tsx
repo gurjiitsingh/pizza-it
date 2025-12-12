@@ -14,7 +14,7 @@ export default function ContactInfo() {
           <h3 className="uppercase text-sm tracking-wider font-semibold mb-2">Address</h3>
           
           <p className="text-sm">Pizza Italia,  </p>
-            <p className="text-sm">Bhogpur to Bholath Road,Near Petrol Pump Bhatnura Lubana, </p>
+            <p className="text-sm">Bhogpur to Bholath Road, Near Petrol Pump Bhatnura Lubana, </p>
             <p className="text-sm">Punjab 144201</p>
         </div>
 

@@ -38,7 +38,7 @@ export default function FlyerBuffet() {
 
             <div className="text-sm text-gray-700 space-y-1">
               <p>Braunschweigerstr. 93, 38518 Gifhorn</p>
-              <p>05371 62 66 291 | masala-gf.de</p>
+              <p>05371 62 66 291 | pizza-italia.it10x.com</p>
             </div>
           </div>
 

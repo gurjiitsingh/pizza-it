@@ -130,7 +130,7 @@ export default function Catering() {
       </div>
 
       <p className="flex justify-center items-center gap-2">
-        ✉️ info@masala-gf.de
+        ✉️ info@pizza-italia.it10x.com
       </p>
     </div>
   </div>
