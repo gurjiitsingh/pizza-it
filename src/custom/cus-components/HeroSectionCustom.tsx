@@ -20,7 +20,7 @@ export default function HeroSectionCustom() {
       <div className="relative w-full h-[50vh] md:h-[90vh] flex items-center justify-center">
 
         <Image
-          src="/images/hero-1.jpg"
+          src="/images/hero-6.jpg"
           alt="Restaurant background"
           fill
           className="object-cover"
@@ -34,13 +34,13 @@ export default function HeroSectionCustom() {
         <div className="absolute bottom-[13rem] md:bottom-auto md:top-40 w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex justify-center md:justify-start z-20">
             <div
-              className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white flex items-center justify-center shadow-lg"
+              className="overflow-hidden w-24 h-24 md:w-28 md:h-28 rounded-full bg-white flex items-center justify-center shadow-lg"
               data-aos="fade-right"
             >
               <img
                 src="/logo-10.png"
                 alt="Logo"
-                className="w-20 h-20 md:w-24 md:h-24 object-contain"
+                className="w-24 h-24 md:w-24 md:h-24 object-contain"
               />
             </div>
           </div>
@@ -71,22 +71,23 @@ export default function HeroSectionCustom() {
 
             {/* Title */}
             <h2
-              className={`${chicle.className} text-4xl md:text-5xl my-3 text-[#ea9244] md:text-white`}
+              className={`${chicle.className} text-center md:text-left text-4xl md:text-5xl my-3 text-[#841b1a] md:text-white`}
             >
-              Grill Hut Junction
+              Pizz Italia
             </h2>
 
             {/* Features */}
             <ul className="space-y-2 text-base text-[12px]">
               <li className="flex items-center justify-center md:justify-start gap-2 text-[#5e8147] md:text-white">
                 <FaThumbsUp className="text-[#5e8147] md:text-white" />
-                No platform fees
+                
+                Best Pizza
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2 text-[#5e8147] md:text-white">
                 <FaShieldAlt className="text-[#5e8147] md:text-white" />
-                No payment fees
+                Great Taste
               </li>
-              <li className="flex items-center justify-center md:justify-start gap-2 text-[#5e8147] md:text-white">
+              {/* <li className="flex items-center justify-center md:justify-start gap-2 text-[#5e8147] md:text-white">
                 <FaSmile className="text-[#5e8147] md:text-white" />
                 1235{" "}
                 <a
@@ -95,7 +96,7 @@ export default function HeroSectionCustom() {
                 >
                   Guest Recommendations
                 </a>
-              </li>
+              </li> */}
             </ul>
 
             {/* Buttons */}
@@ -104,7 +105,7 @@ export default function HeroSectionCustom() {
                 href="/#order_now"
                 rel="noopener noreferrer"
                 data-aos="fade-left"
-                className={`${chicle.className} bg-[#ea9244] border-white border-2 hover:bg-[#657f53] text-2xl text-white font-semibold px-6 py-1 rounded-xl transition text-center tracking-wide`}
+                className={`${chicle.className} bg-[#841b1a] border-white border-2 hover:bg-[#657f53] text-2xl text-white font-semibold px-6 py-1 rounded-xl transition text-center tracking-wide`}
               >
                 🍴 ORDER MENU
               </Link>
@@ -112,7 +113,7 @@ export default function HeroSectionCustom() {
               <Link
                 href="/menu"
                 rel="noopener noreferrer"
-                className={`${chicle.className} bg-white text-[#ea9244] text-2xl font-bold px-6 py-1 rounded-xl border border-[#ea9244] hover:bg-[#5e8147] hover:text-white transition text-center`}
+                className={`${chicle.className} bg-white text-[#841b1a] text-2xl font-bold px-6 py-1 rounded-xl border border-[#841b1a] hover:bg-[#5e8147] hover:text-white transition text-center`}
               >
                 Menu
               </Link>

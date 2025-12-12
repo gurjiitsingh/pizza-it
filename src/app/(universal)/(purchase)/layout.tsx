@@ -4,8 +4,8 @@ import SiteLayout from "@/components/SiteLayout";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "Masala Taste of India, Braunschweig-Broitzem",
-  description: "Masala Taste of India, Indian food",
+  title: "Pizza Italia, Braunschweig-Broitzem",
+  description: "Pizza Italia, Indian food",
   other: {
     google: "notranslate",
   },

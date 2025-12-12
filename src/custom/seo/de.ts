@@ -1,7 +1,7 @@
 export const SEO = {
-  title: "Masala – Indisches Restaurant in Gifhorn, Niedersachsen",
+  title: "Pizz Italia – Bhogpur to Bholath Road, Bhatnura Lubana, Punjab 144201",
   description:
-    "Genießen Sie authentische indische Küche bei Masala in Gifhorn. Jetzt online bestellen oder vor Ort besuchen.",
+    "Authentic food at Grill Hut , Bhogpur to Bholath Road, Bhatnura Lubana, Punjab 144201. Order online for delivery ",
 };
 
 
@@ -10,16 +10,16 @@ export const BRANDING = {
   offer_instruction: "", // fallback for DB-driven value
   delivery_note: "Lieferung ist ebenfalls verfügbar.",
   home_page_disclaimer: "",//"Das Essen kann vom Bild abweichen",
-  brand: "Masala",
-  tag_line: "Taste of India",
-  brand_name: "Masala Taste of India",
+  brand: "Pizza Italia",
+  tag_line: "",
+  brand_name: "Pizza Italia",
 
    poweredBy: "Bereitgestellt von",
   poweredByUrl: "https://www.gstadeveloper.com",
   copyright: {
     prefix: "Urheberrecht ©",
     suffix: "Alle Rechte vorbehalten von",
-    company: "Masala Taste of India",
+    company: "Pizza Italia",
   },
 
 
@@ -30,7 +30,7 @@ export const BRANDING = {
   copyright: {
     prefix: "Copyright ©",
     suffix: "Alle Rechte vorbehalten von",
-    company: "Masala Taste of India",
+    company: "Pizza Italia",
   },
 },
 

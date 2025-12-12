@@ -7,7 +7,7 @@ export default function ContactUs() {
       <div className="flex flex-col max-w-7xl mx-auto gap-1 md:flex-row my-24 justify-between">
         {/* Address Section */}
         <div className="flex flex-col pb-12">
-          <h1 className="text-[#333] text-[3rem]">Grill Hut Junction</h1>
+          <h1 className="text-[#333] text-[3rem]">Pizz Italia</h1>
           <div className="w-full  space-y-3 text-lg">
          
             
@@ -15,7 +15,7 @@ export default function ContactUs() {
                       <h3 className="uppercase text-sm tracking-wider font-semibold mb-2">Address</h3>
                       
                       <p className="text-sm">Grill Hut, Junction, </p>
-                        <p className="text-sm">G. T. Road, Bhogpur, </p>
+                        <p className="text-sm">Bhogpur to Bholath Road, Bhatnura Lubana, </p>
                         <p className="text-sm">Punjab 144201</p>
                     </div>
                     <div className="flex flex-col">
