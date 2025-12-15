@@ -43,7 +43,7 @@ const Form = () => {
         //  alert("✅ Product added successfully!");
         const SO = Number(data.sortOrder) + 1 || 1;
         reset({
-           name: "",
+          // name: "",
           sortOrder: SO.toString(),
           //  categoryId: "",
 

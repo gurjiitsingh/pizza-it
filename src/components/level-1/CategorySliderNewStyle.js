@@ -121,7 +121,7 @@ export default function CategorySliderNewStyle() {
                       <h3
                         className={`${quicksand.className} text-lg font-extrabold text-[#2B2E4A] mb-1`}
                       >
-                        {category.name }
+                        {category.name || "74 Chicken Tikka Masala"}
                       </h3>
 
                       <p className="italic text-gray-500 text-sm mb-1">
