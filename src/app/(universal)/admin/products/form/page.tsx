@@ -80,10 +80,10 @@ const Page = () => {
   async function onsubmit(data: TnewProductSchema) {
     setIsSubmitting(true);
     const formData = new FormData();
-
+console.log("data---------", data)
     formData.append("name", data.name);
     formData.append("price", String(data.price ?? 0));
-    formData.append("hasVariants", "true");
+    formData.append("hasVariants", "false");
     formData.append("type", "parent");
     formData.append("discountPrice", String(data.discountPrice ?? 0));
     formData.append("stockQty", String(data.stockQty ?? -1));
@@ -108,7 +108,7 @@ const Page = () => {
       formData.append("image", "0");
     }
 
-    const result = await addNewProduct(formData);
+   const result = await addNewProduct(formData);
     setIsSubmitting(false);
 
     if (!result?.errors) {

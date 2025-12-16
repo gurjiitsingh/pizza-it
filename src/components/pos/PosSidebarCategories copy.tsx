@@ -26,7 +26,9 @@ export default function PosSidebarCategories() {
     settings,
   } = UseSiteContext();
 
-  /* Sync selected category */
+  /** ------------------------------------------
+   *  Sync selected category with global + fallback
+   *  ------------------------------------------ */
   useEffect(() => {
     if (!productCategoryIdG) {
       setDisplayCategory(settings.display_category?.toString() ?? null);
@@ -35,7 +37,9 @@ export default function PosSidebarCategories() {
     }
   }, [settings, productCategoryIdG]);
 
-  /* Load categories */
+  /** ------------------------------------------
+   *  Load Categories
+   *  ------------------------------------------ */
   useEffect(() => {
     async function load() {
       try {
@@ -46,15 +50,16 @@ export default function PosSidebarCategories() {
           (a, b) => Number(a.sortOrder ?? 0) - Number(b.sortOrder ?? 0)
         );
 
+        // Only featured categories (your logic)
         const featured = categories.filter(
           (c) => c.isFeatured !== "no"
         );
         setCategoryData(featured);
 
+        // Pickup discount disabled categories
         const pickupDisabled = categories
           .filter((c) => c.disablePickupDiscount === true)
           .map((c) => c.id);
-
         setDisablePickupCatDiscountIds(pickupDisabled);
       } catch (e) {
         console.error("Category load error:", e);
@@ -65,7 +70,9 @@ export default function PosSidebarCategories() {
   }, []);
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1">
+    
+
       {categoryData.map((cat) => {
         const active = displayCategory === cat.id;
 
@@ -73,21 +80,14 @@ export default function PosSidebarCategories() {
           <button
             key={cat.id}
             onClick={() => setProductCategoryIdG(cat.id)}
-            className={`
-              w-full rounded-lg transition shadow-sm
-              ${active
-                ? "bg-green-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"}
-
-              flex flex-col md:flex-row
-              items-center justify-center md:justify-start
-              gap-1 md:gap-2
-              px-1 md:px-2
-              py-2
-              text-center md:text-left
+            className={`w-full text-left px-1 py-1 rounded-lg transition flex items-center gap-2
+              ${active 
+                ? "bg-green-600 text-white font-semibold shadow-sm"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }
             `}
           >
-            {/* Category Image */}
+            {/* Image (small + clean) */}
             <div className="w-10 h-10 rounded-md overflow-hidden bg-gray-200 flex-shrink-0">
               <img
                 src={cat.image || "/com.jpg"}
@@ -97,9 +97,7 @@ export default function PosSidebarCategories() {
             </div>
 
             {/* Category Name */}
-            <span className="text-xs md:text-sm font-medium leading-tight line-clamp-2">
-              {cat.name}
-            </span>
+            <span className="text-sm font-medium">{cat.name}</span>
           </button>
         );
       })}
