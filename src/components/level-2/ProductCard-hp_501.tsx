@@ -68,7 +68,7 @@ export default function ProductCardHorizontical({
     if (!product.hasVariants || !defaultVariant) return;
 
     if (defaultVariant.stockQty === 0) return;
-// name: `${product.name} ${defaultVariant.name}`,
+    // name: `${product.name} ${defaultVariant.name}`,
     addProductToCart({
       id: defaultVariant.id,
       quantity: 1,
@@ -85,29 +85,17 @@ export default function ProductCardHorizontical({
 
   /* ---------------- UI ---------------- */
   return (
- <div className="bg-white w-full xl:w-[49%] rounded-2xl shadow-sm p-3">
-  {/* SINGLE ROW – HEIGHT NEVER CHANGES */}
-  <div className="flex items-center gap-1 flex-nowrap overflow-x-auto">
+    <div className="bg-white w-full xl:w-[49%] rounded-2xl shadow-sm p-3">
+      {/* SINGLE ROW – HEIGHT NEVER CHANGES */}
+      <div className="flex items-center gap-1 flex-nowrap overflow-x-auto">
+     
 
-    {/* IMAGE */}
-    <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
-      {product.image && (
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={80}
-          height={80}
-          className="object-cover"
-        />
-      )}
-    </div>
-
-    {/* VARIANTS */}
-    {product.hasVariants &&
-      productVariants.map((variant) => (
-        <div
-          key={variant.id}
-          className="
+        {/* VARIANTS */}
+        {product.hasVariants &&
+          productVariants.map((variant) => (
+            <div
+              key={variant.id}
+              className="
             w-[90px]
             h-[80px]
             flex-shrink-0
@@ -122,68 +110,104 @@ export default function ProductCardHorizontical({
             px-px py-px
             text-center
           "
-        >
-          {/* NAME */}
-          <span className="text-xs font-semibold leading-tight">
-            {variant.name}
-          </span>
+            >
+              {/* NAME */}
+              <span className="text-xs font-semibold leading-tight">
+                {variant.name}
+              </span>
 
-          {/* PRICE */}
-          <span className="text-xs font-bold text-gray-700">
-            {formatCurrencyNumber(
-              variant.price ?? 0,
-              settings.currency as string,
-              settings.locale as string
-            )}
-          </span>
-{/* name: `${product.name} ${variant.name}`, */}
-          {/* ADD */}
-          <CartButtonAdd
-            cartProduct={{
-              id: variant.id,
-              quantity: 1,
-              stockQty: variant.stockQty,
-              price: variant.price ?? 0,
-              name: `${variant.name}`,
-              image: product.image,
-              categoryId: variant.categoryId,
-              productCat: variant.productCat!,
-              taxRate: variant.taxRate,
-              taxType: variant.taxType,
-            }}
-          />
+              {/* PRICE */}
+              <span className="text-xs font-bold text-gray-700">
+                {formatCurrencyNumber(
+                  variant.price ?? 0,
+                  settings.currency as string,
+                  settings.locale as string
+                )}
+              </span>
+              {/* name: `${product.name} ${variant.name}`, */}
+              {/* ADD */}
+              <CartButtonAdd
+                cartProduct={{
+                  id: variant.id,
+                  quantity: 1,
+                  stockQty: variant.stockQty,
+                  price: variant.price ?? 0,
+                  name: `${variant.name}`,
+                  image: product.image,
+                  categoryId: variant.categoryId,
+                  productCat: variant.productCat!,
+                  taxRate: variant.taxRate,
+                  taxType: variant.taxType,
+                }}
+              />
+            </div>
+          ))}
+
+        {/* NO VARIANTS (fallback) */}
+        {/* NO VARIANTS (fallback) */}
+        {!product.hasVariants && (
+          <div
+            className="
+      w-[90px]
+      h-[80px]
+      flex-shrink-0
+      rounded-xl
+      border
+      border-slate-100
+      bg-slate-50
+      flex
+      flex-col
+      items-center
+      justify-between
+      px-1 py-1
+      text-center
+    "
+          >
+            {/* PRODUCT NAME */}
+            <span className="text-xs font-semibold leading-tight line-clamp-2">
+              {product.name}
+            </span>
+
+            {/* PRICE */}
+            <span className="text-xs font-bold text-gray-700">
+              {formatCurrencyNumber(
+                product.price ?? 0,
+                settings.currency as string,
+                settings.locale as string
+              )}
+            </span>
+
+            {/* ADD */}
+            <CartButtonAdd
+              cartProduct={{
+                id: product.id,
+                quantity: 1,
+                stockQty: product.stockQty,
+                price: product.price ?? 0,
+                name: product.name,
+                image: product.image,
+                categoryId: product.categoryId,
+                productCat: product.productCat!,
+                taxRate: product.taxRate,
+                taxType: product.taxType,
+              }}
+            />
+          </div>
+        )}
+
+           {/* IMAGE */}
+        <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+          {product.image && (
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={80}
+              height={80}
+              className="object-cover"
+            />
+          )}
         </div>
-      ))}
-
-    {/* NO VARIANTS (fallback) */}
-   {/* NO VARIANTS (fallback) */}
-{!product.hasVariants && (
-  <div className="flex items-center justify-between gap-2 flex-1 px-2">
-    {/* PRODUCT NAME */}
-    <span className="text-sm font-semibold text-gray-800 truncate">
-      {product.name}
-    </span>
-
-    {/* ADD BUTTON */}
-    <CartButtonAdd
-      cartProduct={{
-        id: product.id,
-        quantity: 1,
-        stockQty: product.stockQty,
-        price: product.price ?? 0,
-        name: product.name,
-        image: product.image,
-        categoryId: product.categoryId,
-        productCat: product.productCat!,
-        taxRate: product.taxRate,
-        taxType: product.taxType,
-      }}
-    />
-  </div>
-)}
-
-  </div>
-</div>
-
+      </div>
+    </div>
   );
 }
