@@ -80,7 +80,7 @@ const Page = () => {
   async function onsubmit(data: TnewProductSchema) {
     setIsSubmitting(true);
     const formData = new FormData();
-console.log("data---------", data)
+
     formData.append("name", data.name);
     formData.append("price", String(data.price ?? 0));
     formData.append("hasVariants", "false");
@@ -108,7 +108,7 @@ console.log("data---------", data)
       formData.append("image", "0");
     }
 
-   const result = await addNewProduct(formData);
+    const result = await addNewProduct(formData);
     setIsSubmitting(false);
 
     if (!result?.errors) {
@@ -367,10 +367,11 @@ console.log("data---------", data)
               <div>
                 <label className="label-style">Tax Type</label>
                 <select {...register("taxType")} className="input-style py-1">
-                  <option value="inclusive">
+                 
+                  <option value="exclusive">Exclusive (Added on total)</option>
+                   <option value="inclusive">
                     Inclusive (Deducted from total)
                   </option>
-                  <option value="exclusive">Exclusive (Added on total)</option>
                 </select>
               </div>
             </div>
