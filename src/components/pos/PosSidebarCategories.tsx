@@ -80,7 +80,7 @@ export default function PosSidebarCategories() {
           <button
             key={cat.id}
             onClick={() => setProductCategoryIdG(cat.id)}
-            className={`w-full text-left px-1 py-1 rounded-lg transition flex flex-wrap justify-center md:justify-start items-center gap-2
+            className={`w-full text-left px-1 py-1 rounded-lg transition flex items-center gap-2
               ${active 
                 ? "bg-green-600 text-white font-semibold shadow-sm"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -88,7 +88,7 @@ export default function PosSidebarCategories() {
             `}
           >
             {/* Image (small + clean) */}
-            <div className="w-10 h-10 rounded-md bg-red-300 overflow-hidden bg-gray-200 flex-shrink-0">
+            <div className="w-10 h-10 rounded-md overflow-hidden bg-gray-200 flex-shrink-0">
               <img
                 src={cat.image || "/com.jpg"}
                 alt={cat.name}

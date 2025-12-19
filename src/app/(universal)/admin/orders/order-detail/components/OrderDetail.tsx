@@ -13,7 +13,8 @@ import { OrderProductT } from "@/lib/types/orderType";
 import { orderMasterDataT } from "@/lib/types/orderMasterType";
 import { formatCurrencyNumber } from '@/utils/formatCurrency';
 import { UseSiteContext } from "@/SiteContext/SiteContext";
-
+  import { Timestamp } from "firebase/firestore";
+import { formatFirestoreDateToIST } from "@/utils/date";
 const OrderDetail = () => {
   const searchParams = useSearchParams();
   // console.log(
@@ -76,7 +77,7 @@ if (addressId === "POS_ORDER") {
   useEffect(() => {
     // console.log("addre ins use efferxt-----", customerAddress);
   }, [customerAddress]);
-  const endTotalG = orderMasterData?.endTotalG;
+  const subTotal = orderMasterData?.subTotal;
    
     
   const totalTax = formatCurrencyNumber(
@@ -85,8 +86,8 @@ if (addressId === "POS_ORDER") {
     (settings.locale ) as string
   );
 
-  const finalGrandTotal = formatCurrencyNumber(
-    Number(orderMasterData?.finalGrandTotal ?? 0),
+  const grandTotal = formatCurrencyNumber(
+    Number(orderMasterData?.grandTotal ?? 0),
     (settings.currency ) as string,
     (settings.locale ) as string
   );
@@ -96,8 +97,8 @@ if (addressId === "POS_ORDER") {
     (settings.currency ) as string,
     (settings.locale ) as string
   );
-    const endTotalGS = formatCurrencyNumber(
-    Number(endTotalG?.toFixed(2)) ?? 0,
+    const subTotalS = formatCurrencyNumber(
+    Number(subTotal?.toFixed(2)) ?? 0,
     (settings.currency ) as string,
     (settings.locale ) as string
   );
@@ -126,7 +127,16 @@ if (addressId === "POS_ORDER") {
     (settings.locale ) as string
   );
 
-  
+
+
+
+
+const dateTime = formatFirestoreDateToIST(
+  orderMasterData?.createdAt as string
+);
+
+
+
 
   return (
     <div className="flex flex-col gap-4 bg-white px-3 flex-1 mb-12">
@@ -143,7 +153,10 @@ if (addressId === "POS_ORDER") {
           </div>
           <div className="flex gap-2">
             <div className="font-semibold">Date:</div>{" "}
-            <div className="">{orderMasterData?.time}</div>
+            <div className="">
+              {/* {orderMasterData?.time} */}
+              {dateTime}
+              </div>
           </div>
           <div className="flex gap-2">
             <div className="font-semibold">Status:</div>{" "}
@@ -154,7 +167,7 @@ if (addressId === "POS_ORDER") {
          
  <div className="flex gap-2">
             <div className="font-semibold">Total Payable:</div>{" "}
-            <div className="">{finalGrandTotal}</div>
+            <div className="">{grandTotal}</div>
           </div>
          
         </div>
@@ -194,7 +207,7 @@ if (addressId === "POS_ORDER") {
           </div>
           <div className="flex gap-2">
             <div className="font-semibold">Subtotal:</div>{" "}
-            <div className="">{endTotalGS}</div>
+            <div className="">{subTotalS}</div>
           </div>
    <div className="flex gap-2">
             <div className="font-semibold">Tax:</div>{" "}
@@ -202,7 +215,7 @@ if (addressId === "POS_ORDER") {
           </div>
  <div className="flex gap-2">
             <div className="font-semibold">Grand Total:</div>{" "}
-            <div className="">{finalGrandTotal}</div>
+            <div className="">{grandTotal}</div>
           </div>
 
         </div>
