@@ -31,8 +31,14 @@ export default function POSTableRow({ order }: { order: orderMasterDataT }) {
       <TableCell>
         <div className="flex gap-1">
         <Link
-        //  href={`/pos/order-detail?orderId=${order.id}`}
-        href={``}
+         href={{
+            pathname: `/pos/orders/order-detail`,
+            query: {
+              masterId: order.id,
+              userId: order.userId,
+              addressId: order.addressId,
+            }}}
+       // href={`/pos/orders/order-detail?orderId=${order.id}`}
           className="p-1 py-1 flex items-center border rounded-full text-sm font-semibold"
         >
           #{order.srno}
