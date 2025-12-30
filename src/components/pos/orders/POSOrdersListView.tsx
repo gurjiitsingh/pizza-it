@@ -63,13 +63,13 @@ export default function POSOrdersListView() {
           <TableHeader className="bg-gray-100">
             <TableRow>
               <TableHead>Order</TableHead>
-               
               <TableHead>Name</TableHead>
               <TableHead>Time</TableHead>
+               <TableHead>Delivery/Picup</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Total</TableHead>
               <TableHead>Payment</TableHead>
-              <TableHead>Printed</TableHead>
+              {/* <TableHead>Print</TableHead> */}
               <TableHead>Action</TableHead>
             </TableRow>
           </TableHeader>

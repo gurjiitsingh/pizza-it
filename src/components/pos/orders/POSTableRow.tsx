@@ -7,12 +7,14 @@ import { MdDeleteForever, MdPrint } from "react-icons/md";
 import { deleteOrderMasterRec } from "@/app/(universal)/action/orders/dbOperations";
 import { formatCurrencyNumber } from "@/utils/formatCurrency";
 import { UseSiteContext } from "@/SiteContext/SiteContext";
+import { formatDateTimeStamp } from "@/utils/formatDateTimestamp";
+import { Timestamp } from "firebase/firestore";
 
 export default function POSTableRow({ order }: { order: orderMasterDataT }) {
   const { settings } = UseSiteContext();
 
-  const total = formatCurrencyNumber(
-    Number(order.endTotalG) || 0,
+  const grandTotal = formatCurrencyNumber(
+    Number(order.grandTotal) || 0,
     settings.currency as string,
     settings.locale as string
   );
@@ -61,7 +63,18 @@ export default function POSTableRow({ order }: { order: orderMasterDataT }) {
 
       <TableCell>{order.customerName || "Walk-in"}</TableCell>
 
-      <TableCell>{order.time}</TableCell>
+      <TableCell> {formatDateTimeStamp(
+          order.createdAt as Timestamp,
+          String(settings.locale) || process.env.NEXT_PUBLIC_DEFAULT_LOCALE
+        ) }</TableCell>
+
+       <TableCell className="text-gray-600 dark:text-zinc-400 text-sm">
+        {/* {order.time} */}
+        {formatDateTimeStamp(
+    order.scheduledAt as Timestamp,
+    String(settings.locale) || process.env.NEXT_PUBLIC_DEFAULT_LOCALE
+  ) } 
+      </TableCell>
 
       <TableCell>
         <span
@@ -77,7 +90,7 @@ export default function POSTableRow({ order }: { order: orderMasterDataT }) {
         </span>
       </TableCell>
 
-      <TableCell className="font-semibold">{total}</TableCell>
+      <TableCell className="font-semibold">{grandTotal}</TableCell>
 
       <TableCell>{order.paymentType}</TableCell>
 
